@@ -1,27 +1,60 @@
-@mixin grid{
+@mixin grid {
     display: grid;
     grid-template-columns: 100%;
 }
-body{
+@mixin section {
+    margin: 0;
+    background-color: $tundora;
+    color: #fff;
+    padding-left: 5px;
+}
+@mixin proj_exp {
+    padding: 5px 0;
+}
+@mixin logo {
+    width: 100%;
+    padding: 10px 0;
+    img { width: 40px; }
+}
+body {
+    width: 800px;
+    margin: 0px auto 40px auto;
+    font-family: "Avenir","Roboto","Segoe UI","Helvetica Neue",Arial,sans-serif;
+    color: $tundora;
     @media screen and (max-width: 800px) {
         width: 100%;
     }
 }
-.header{
+.intro_wrap, .projects, .experiences {
     padding: 0 20px;
 }
-.title{
-    @include grid;
+.title {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-decoration: none;
+        color:$tundora; 
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    .text {
+        text-align: center;
+        h1, h2 {
+            font-weight: 300;
+            margin: 0;
+        }
+    }
 }
-.wrapper{
+.intro_wrap {
     display: grid;
     grid-template-columns: 20% 80%;
-
-    @media screen and (max-width: 800px) {
-        grid-template-columns: 100%;
-    }
-
-    .pro-img{
+    .img_of_me {
         img{
             width: 100%;
             @media (max-width: 800px) {
@@ -33,19 +66,86 @@ body{
             text-align: center;
         }
     }
-    .intro{
+    .intro {
         padding-left: 25px;
         @media (max-width: 800px) {
             padding-left: 0px;
         }
     }
+    .logos {
+        @include logo;
+        img { 
+            @media screen and (max-width: 800px) {
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 100%;
+    }
 }
 // Projects
-.wrap_projects{
-
+.projects{
+    h2 { @include section; }
+    .project{
+        @include proj_exp;
+        h3 {margin: 0;}
+        p { 
+            &:nth-child(3) {
+                margin: 10px 0; 
+                padding: 10px;
+                background: #0000000f;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $tundora;
+            border: 1px solid $tundora;
+            border-radius: 5px;
+            padding: 5px;
+            &:hover{
+                background-color: $tundora;
+                color: #fff;
+            }
+        }
+    }
 }
-
 // Internships & Experience
-.experiences{
+.experiences {
     @include grid;
+    padding-top: 20px;
+    h2 { 
+        @include section;
+    }
+    .exp {
+        @include proj_exp;
+        p { font-style: italic; }
+        .job-title, .job-location, .job-description{
+            margin: 0;
+        }
+        .job-title {
+            margin-top: 5px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            margin-left: 0px;
+            background: #0000000f;
+            li{
+                padding-left: 30px;
+                text-indent: -1em;              
+                &:before {
+                    content: "+";
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+footer {
+    margin-bottom: 40px;
+    @include logo;
 }
