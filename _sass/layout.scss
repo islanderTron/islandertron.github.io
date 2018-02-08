@@ -1,0 +1,51 @@
+@mixin grid{
+    display: grid;
+    grid-template-columns: 100%;
+}
+body{
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
+}
+.header{
+    padding: 0 20px;
+}
+.title{
+    @include grid;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 100%;
+    }
+
+    .pro-img{
+        img{
+            width: 100%;
+            @media (max-width: 800px) {
+                width: 30%;
+            }
+            border-radius: 50%;
+        }
+        @media (max-width: 800px) {
+            text-align: center;
+        }
+    }
+    .intro{
+        padding-left: 25px;
+        @media (max-width: 800px) {
+            padding-left: 0px;
+        }
+    }
+}
+// Projects
+.wrap_projects{
+
+}
+
+// Internships & Experience
+.experiences{
+    @include grid;
+}
