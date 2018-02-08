@@ -16,7 +16,7 @@
 title: Paul Uncangco
 email: pju93@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi, my name is Paul. I’m from Guam. I graduated from Rochester Institute of Technology in Web & Mobile Development. I enjoy and learning modern technology and challenge.
+  Hi, I’m from Guam. I graduated from Rochester Institute of Technology in Web & Mobile Development. I enjoy and learning modern technology and challenges.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
