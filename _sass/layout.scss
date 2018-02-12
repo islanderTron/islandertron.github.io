@@ -6,7 +6,7 @@
     margin: 0;
     background-color: $tundora;
     color: #fff;
-    padding-left: 5px;
+    padding: 5px;
 }
 @mixin proj_exp {
     padding: 5px 0;
@@ -87,21 +87,28 @@ body {
         @include proj_exp;
         h3 {margin: 0;}
         p { 
-            &:nth-child(3) {
-                margin: 10px 0; 
+            // &:nth-child(2) {
+                // margin: 10px 0; 
                 padding: 10px;
                 background: #0000000f;
-            }
+            // }
+            &:nth-child(1) {
+                font-style: italic;
+            }  
         }
-        a {
-            text-decoration: none;
-            color: $tundora;
-            border: 1px solid $tundora;
-            border-radius: 5px;
-            padding: 5px;
-            &:hover{
-                background-color: $tundora;
-                color: #fff;
+        .link {
+            padding: 0;
+            margin-top: 15px;
+            a {
+                text-decoration: none;
+                color: $tundora;
+                border: 1px solid $tundora;
+                border-radius: 5px;
+                padding: 5px;
+                &:hover{
+                    background-color: $tundora;
+                    color: #fff;
+                }
             }
         }
     }
