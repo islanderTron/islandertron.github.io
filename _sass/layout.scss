@@ -87,11 +87,8 @@ body {
         @include proj_exp;
         h3 {margin: 0;}
         p { 
-            // &:nth-child(2) {
-                // margin: 10px 0; 
                 padding: 10px;
                 background: #0000000f;
-            // }
             &:nth-child(1) {
                 font-style: italic;
             }  
