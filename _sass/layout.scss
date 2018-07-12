@@ -99,36 +99,61 @@ body {
     }
 }
 // Projects
-.projects{
-    padding-top: 20px;
-    h2 { @include section; }
-    .project{
-        @include proj_exp;
-        h3 {margin: 0;}
-        p { 
-                padding: 10px;
-                background: #0000000f;
-            &:nth-child(1) {
-                font-style: italic;
-            }  
-        }
-        .link {
-            padding: 0;
-            margin-top: 15px;
-            a {
-                text-decoration: none;
-                color: $tundora;
-                border: 1px solid $tundora;
-                border-radius: 5px;
-                padding: 5px;
-                &:hover{
-                    background-color: $tundora;
-                    color: #fff;
-                }
-            }
-        }
-    }
-}
+// .projects{
+//     padding-top: 20px;
+//     h2 { @include section; }
+//     .proj_wrap{
+//         display: flex;
+//         flex-flow: column wrap;
+//         @media screen and (max-width: 800px) {
+//             flex-flow: row wrap;
+//         }
+//         .project{
+//             @include proj_exp;
+//             display: grid;
+//             grid-template-columns: 20% 80%;
+//             h3 {
+//                 margin: 0;
+//                 background-color: #00e8ff99;
+//                 width: 115px;
+//                 height: 115px;
+//                 border-radius: 50%;
+//                 align-items: center;
+//                 display: flex;
+//                 text-align: center;
+//                 color: #000;
+//                 justify-content: center;
+//             }
+//             .open {
+//                 // width: 100%;
+//                 // border-radius: 
+//             }
+//             p { 
+//                     padding: 10px;
+//                     // background: #0000000f;
+//                 &:nth-child(1) {
+//                     font-style: italic;
+//                 }  
+//             }
+//             .link {
+//                 padding: 0;
+//                 margin-top: 15px;
+//                 margin-left: 10px;
+//                 a {
+//                     text-decoration: none;
+//                     color: $tundora;
+//                     border: 1px solid $tundora;
+//                     border-radius: 5px;
+//                     padding: 5px;
+//                     &:hover{
+//                         background-color: $tundora;
+//                         color: #fff;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 // Internships & Experience
 .experiences {
     @include grid;
@@ -164,4 +189,46 @@ body {
 footer {
     margin-bottom: 40px;
     @include logo;
+}
+
+.editor_window{ 
+    background: #000;
+    border-radius: 5px;
+    .dots {
+        padding: 10px;
+        div{ 
+            display: inline-block;
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+    }   
+
+    .titles {
+        width: 50%;
+        text-align: center;
+    }
+    .active {
+        background: #424242bd;
+    }
+}
+
+.editor_body {
+    background: #424242;
+    color: #fff;
+    .tab_space {
+        padding-left: 20px;
+    }
+    ol{ 
+        counter-reset: section;
+        list-style-type: none;
+        li { 
+            text-decoration: none;
+            counter-increment: section;
+            &:before {
+                content: counter(section, '.') " ";
+            }
+        }
+    }
 }
