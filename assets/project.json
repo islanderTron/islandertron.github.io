@@ -1,0 +1,23 @@
+[
+    {
+        "id": "0",
+        "name": "Time Logging",
+        "description": "Used client and server API for CRUD in React.js and successfully understood how to manage the state and pass the data between components using props.  Organized apps into components and how data flow between parent and child components.",
+        "technolgoies": "HTML/CSS/JavaScript, React.js, Git",
+        "link": "https://github.com/islanderTron/time-logging"
+    },
+    {
+        "id": "1",
+        "name": "Soliday, Michael",
+        "description":"Redesigned and developed front and back end in WordPress for the author of Keltian's Warriors.",
+        "technolgoies": "WordPress, PHP, Javascript, MySQL, Sass",
+        "link":"https://solidaymichael.com"
+    },
+    {
+        "id": "2",
+        "name": "Learn Node",
+        "description": "Developed web application that takes in API file and interacts with back-end database. Developed front-end by using modern technologies: Pug for best experience and development.",
+        "technolgoies": "Node.js, Express.js, MongoDB, Webpacks, Pug.js, ES6, Sass",
+        "link": "https://github.com/islanderTron/LearnNode"
+    }
+]
