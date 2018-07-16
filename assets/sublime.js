@@ -1,9 +1,6 @@
-let proj_name = document.getElementsByClassName('tab_space')[0].childNodes[3].innerHTML,
-project_desc =  document.getElementsByClassName('tab_space paragraph')[0].childNodes[1].innerHTML,
-proj_tech =     document.getElementsByClassName('tab_space console')[0].childNodes[5].innerHTML,
-proj_link =     document.getElementsByTagName('a')[0].href,
-project_tab =   document.getElementsByClassName('titles')[0], 
-default_id =    0;
+let project_tab =   document.getElementsByClassName('titles')[0];
+let url = 'assets/project.json';
+
 function requestURL(url, callback) {
   let request = new XMLHttpRequest(), 
   method = 'GET', 
@@ -17,32 +14,34 @@ function requestURL(url, callback) {
   request.send();
 };
 
-let url = 'assets/project.json';
-requestURL(url, function(){
+function createClickFunction(i, data) {
+  return project_tab.children[i].addEventListener('click', function() { 
+    for(let j = 0; j < 3; j++) {
+      if( document.querySelector(".titles").children[j].classList == 'active' ) {
+        document.querySelector(".titles").children[j].classList.remove('active');
+      }
+    }
+    
+    document.querySelector(".titles").children[i].classList = 'active';
+
+    document.getElementsByClassName('paragraph_green')[0].innerHTML = '"' + data.name + '"';
+    document.getElementsByClassName('paragraph_green')[1].innerHTML = '"' + data.description + '"';
+    document.getElementsByClassName('paragraph_green')[2].innerHTML = '"' + data.technolgoies + '"';
+    document.getElementsByTagName('a')[4].setAttribute('href', data.link);
+  });
+}
+
+requestURL(url, function(res){
   let data = JSON.parse(this.responseText);
-  
-  console.log(data);
-  
+
   // Default 
-  proj_name =     data[0].name;
-  project_desc =  data[0].description;
-  proj_tech =     data[0].technolgoies;
-  proj_link =     data[0].link;
+  document.getElementsByClassName('paragraph_green')[0].append('"' + data[0].name + '"');
+  document.getElementsByClassName('paragraph_green')[1].append('"' + data[0].description + '"' );
+  document.getElementsByClassName('paragraph_green')[2].append('"' + data[0].technolgoies + '"');
+  document.getElementsByTagName('a')[4].setAttribute('href', data[0].link);
+  document.querySelector(".titles").children[0].classList = 'active';
 
-  for(var i = 0; i < data.length; i++) {
-    console.log(data[i]);
-    project_tab.children[i].addEventListener('click', function(event){
-      console.log(event);
-    });
-  } 
-
-  // for(var i = 0; i < project_tab.children.length; i++) {
-  //   project_tab.children[i].addEventListener('click', function(event){
-  //     console.log(data[i]);
-  //     // proj_name =     data[i].name;
-  //     // project_desc =  data[i].description;
-  //     // proj_tech =     data[i].technolgoies;
-  //     // proj_link =     data[i].link;
-  //   });
-  // }
+  for(let i = 0; i < data.length; i++) {
+    createClickFunction(i, data[i]);
+  }
 });

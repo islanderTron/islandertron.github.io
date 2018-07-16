@@ -1,6 +1,6 @@
 // Variables
 const mediaQuery = window.matchMedia("(max-width:800px)");
-let projClassName   = document.getElementsByClassName("project");
+// let projClassName   = document.getElementsByClassName("project");
 let expClassName    = document.getElementsByClassName("exp")
 
 function toggle() {
@@ -10,20 +10,22 @@ function toggle() {
 }
 
 function handlerWidthChange(mql) { 
+    // debugger;
     if(mql.matches){
-        for(var i = 0; i < projClassName.length; i++) {
+        for(var i = 0; i < expClassName.length; i++) {
             // Projects
-            projClassName[i].childNodes[3].style.display = "none";
-            projClassName[i].addEventListener("click", toggle, false);
+            // projClassName[i].childNodes[3].style.display = "none";
+            // projClassName[i].addEventListener("click", toggle, false);
             
             // Expereinces
             expClassName[i].childNodes[3].style.display = "none";
+            console.log
             expClassName[i].addEventListener("click", toggle, false);
         }
     } else {
         for(var i = 0; i < projClassName.length; i++) {
             // Projects
-            projClassName[i].childNodes[3].style.display = "block";
+            // projClassName[i].childNodes[3].style.display = "block";
 
             // Experiences
             expClassName[i].childNodes[3].style.display = "block";
