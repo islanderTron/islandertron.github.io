@@ -1,23 +1,26 @@
-
-    <div class="title">
-        <a class="text" href="/">
-            <h1>Paul J. Uncangco</h1>
-            <h2>Front End Developer</h2>
-        </a>
-    </div>
     <div class="intro_wrap"> 
         <div class="img_of_me">
-            <img src="/assets/images/7192265.jpeg" alt="Paul standing behind green mountain in Guam">
+            <img src="/assets/images/logo.png" alt="Paul">
         </div>
-        <div class="intro">
-            <p>{{ site.description }}</p>
-            <p>
-                <span>Programming +</span> <img src="/assets/images/coffee.gif" alt="Coffee Animate" width="25px"> <span> = Good Life</span>
-            </p>
-            {% include logos.html %}
+        <div class="wrapped">
+            <div class="title">
+                <a class="text" href="/">
+                    <h1>Paul J. Uncangco</h1>
+                    <h2>Front End Developer</h2>
+                </a>
+            </div>
+            <div class="intro">
+                <p>{{ site.description }}</p>
+                <p>
+                    <span>Programming +</span> <img src="/assets/images/coffee.gif" alt="Coffee Animate" width="25px"> <span> = Good Life</span>
+                </p>
+                {% include logos.html %}
+            </div>
+
         </div>
     </div>
     <div class="projects">
+        <h2>//Projects</h2>
         {% include projects.html%}
     </div>
     <div class="experiences">{% include experience.html %}</div>

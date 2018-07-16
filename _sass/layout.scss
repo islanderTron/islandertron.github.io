@@ -20,7 +20,9 @@ body {
     
     font-family: "Avenir","Roboto","Segoe UI","Helvetica Neue",Arial,sans-serif;
     color: $tundora;
+    background: linear-gradient(#00E8FF, #006AFF);
     @media screen and (max-width: 800px) {
+        background: #ffffff;
         width: 100%;
         margin: 0;
     }
@@ -37,7 +39,7 @@ body {
 .wrapper { 
     position: relative;
     width: 800px;
-    margin: 0px auto 40px auto;
+    margin: 40px auto;
     background-color:#fff;
     @media (max-width: 800px) {
         width: 100%;
@@ -65,6 +67,9 @@ body {
     display: grid;
     grid-template-columns: 20% 80%;
     .img_of_me {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         img{
             width: 100%;
             @media (max-width: 800px) {
@@ -74,6 +79,7 @@ body {
         }
         @media (max-width: 800px) {
             text-align: center;
+            display: inline-block;
         }
     }
     .intro {
@@ -189,46 +195,4 @@ body {
 footer {
     margin-bottom: 40px;
     @include logo;
-}
-
-.editor_window{ 
-    background: #000;
-    border-radius: 5px;
-    .dots {
-        padding: 10px;
-        div{ 
-            display: inline-block;
-            background: #fff;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-    }   
-
-    .titles {
-        width: 50%;
-        text-align: center;
-    }
-    .active {
-        background: #424242bd;
-    }
-}
-
-.editor_body {
-    background: #424242;
-    color: #fff;
-    .tab_space {
-        padding-left: 20px;
-    }
-    ol{ 
-        counter-reset: section;
-        list-style-type: none;
-        li { 
-            text-decoration: none;
-            counter-increment: section;
-            &:before {
-                content: counter(section, '.') " ";
-            }
-        }
-    }
 }

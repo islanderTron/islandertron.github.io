@@ -1,3 +1,9 @@
+@font-face {
+    font-family: Emerald;
+    src: url('../assets/fonts/Emerald-Normal.woff');
+    src: url('../assets/fonts/Emerald-Normal.woff2');
+}
+
 h1 {
     font-size: 2em;
 }
@@ -10,10 +16,14 @@ h3 {
 h4 {
     font-size: 1.33em;
 }
-p, li {
+p {
     font-size: 1.15rem;
     margin: 0;
  }
  .job-title {
      font-weight: 600;
  }
+
+li {
+    font-size: 1.0rem;
+}
